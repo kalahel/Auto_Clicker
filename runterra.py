@@ -11,7 +11,7 @@ def look_for_img_and_click(img_name, should_wait=False):
     while coordinate is None:
         coordinate = pyautogui.locateOnScreen(img_name, confidence=.7)
     if should_wait:
-        time.sleep(1)
+        time.sleep(2)
     pyautogui.moveTo(coordinate)
     pyautogui.click()
 
@@ -33,4 +33,4 @@ for i in range(0, 20):
         should_capitulate = True
     end_time = time.time()
     print('Iteration : ', i, ' Elpased Time : ', end_time - start_time, 's Estimated point per minutes : ',
-          6000 / (end_time - start_time))
+          3000 / (end_time - start_time))
